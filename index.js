@@ -9,9 +9,6 @@ import Vue from "vue";
 import App from "./App";
 Vue.config.productionTip = false;
 
-import myToast from "ynw/vue/plugin/web";
-Vue.use(myToast);
-
 importVueComps();
 
 // import router from "./router";
