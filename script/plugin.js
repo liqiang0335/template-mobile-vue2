@@ -1,3 +1,6 @@
+/**
+ * Vue plugin
+ */
 export default {
   install(Vue) {
     // prototype
