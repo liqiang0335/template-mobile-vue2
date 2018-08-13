@@ -9,6 +9,9 @@ import Vue from "vue";
 import App from "./App";
 Vue.config.productionTip = false;
 
+import plugin from "@/script/plugin";
+Vue.use(plugin);
+
 importVueComps();
 
 // import router from "./router";
