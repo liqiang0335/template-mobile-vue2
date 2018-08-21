@@ -1,16 +1,16 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { setter, logger } from "ynw/vue/vuexHelper";
-
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  plugins: [logger],
+  plugins: [],
   modules: {},
   state: {},
   mutations: {
-    setState: setter
+    setState(state, { key, value }) {
+      state[key] = value;
+    }
   },
   actions: {}
 });
