@@ -1,17 +1,19 @@
 import { Message, MessageBox } from "element-ui";
-import pick from "ynw/object/pick";
-import extend from "ynw/object/extend";
+
+import config from "@/script/config";
 import * as api from "@/script/api";
-import * as config from "@/script/config";
 import * as Types from "@/script/types";
+import * as fn from "@/script/fn";
 
 export default {
-  install(Vue, option) {
+  install(Vue) {
+    //prototype
+    Vue.prototype.$fn = fn;
     Vue.prototype.$config = config;
     Vue.prototype.$types = Types;
     Vue.prototype.$api = api;
-    Vue.prototype.$pick = pick;
-    Vue.prototype.$extend = extend;
+
+    //提示信息
     Vue.prototype.$error = message => Message({ type: "error", message });
     Vue.prototype.$success = message => Message({ type: "success", message });
     Vue.prototype.$confirm = message =>
@@ -21,6 +23,7 @@ export default {
         type: "warning"
       });
 
+    //mixin
     Vue.mixin({
       methods: {
         $setState(key, value) {
