@@ -2,6 +2,15 @@
 import { Promise } from "es6-promise";
 window.Promise = Promise;
 
+window.log = (...arg) => {
+  if (process.env.NODE_ENV === "production") return;
+  console.log(
+    "%c Debug ",
+    "background-color:green;color:white;padding:2px;border-radius:2px;",
+    ...arg
+  );
+};
+
 import "ynw/style/reset.css";
 import "@/style/common.scss";
 
