@@ -19,7 +19,14 @@ export const validate = function({ value, key, handler, error }) {
   }
   const { regex } = item;
   const errorMessage = error || item.error;
-  if (regex.test(value)) {
+
+  //regex字段可以是正则或者函数
+  const test = (regex, value) => {
+    const isFunction = typeof regex == "function";
+    return isFunction ? regex(value) : regex.test(value);
+  };
+
+  if (test(regex, value)) {
     return Promise.resolve();
   }
   if (typeof handler == "function") {
