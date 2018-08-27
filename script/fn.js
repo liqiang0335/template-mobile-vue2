@@ -11,6 +11,7 @@ import config from "@/script/config";
  *  await this.$fn.validate({ value: this.phone, key: "phone" });
  */
 export const validate = function({ value, key, handler, error }) {
+  if (!value) value = "";
   const item = config.validate[key];
   if (!item) {
     const tip = `没有在配置中找到${key}字段`;
