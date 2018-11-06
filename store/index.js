@@ -3,9 +3,11 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+import modules from "./modules";
+
 const store = new Vuex.Store({
+  modules,
   plugins: [],
-  modules: {},
   state: {},
   mutations: {
     setState(state, { key, value }) {
