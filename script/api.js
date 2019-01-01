@@ -1,24 +1,4 @@
-const baseURL = window.path; // 服务器地址
-const ErrorCode = {}; //错误码
-
-////////////////////////////////////////////
-
-import { request } from "ynw/lib/axios";
-const http = request({ baseURL });
-import { Message } from "element-ui";
-
-/**
- * 统一处理错误
- */
-const response = body => {
-  if (body.status != 1) {
-    const message = ErrorCode[body.status];
-    Message({ type: "error", message });
-    return Promise.reject(body.status);
-  } else {
-    return body.data;
-  }
-};
+import http from "./http";
 
 /**
  * Get请求示例
@@ -34,7 +14,7 @@ export async function getRequest(option) {
   };
   const params = Object.assign(def, option);
   const res = await http.get(url, { params });
-  return response(res.data);
+  return res.data;
 }
 
 /**
@@ -51,5 +31,5 @@ export async function postRequest(option) {
   };
   const params = Object.assign(def, option);
   const res = await http.post(url, params);
-  return response(res.data);
+  return res.data;
 }

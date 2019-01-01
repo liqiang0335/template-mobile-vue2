@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-const compContext = require.context("../page", true, /\.vue$/);
+const compContext = require.context("../router", true, /\.vue$/);
 const getCompPathName = path => {
   const match = path.match(/\w+?(?=\/)/g);
   if (!match) return "";

@@ -10,10 +10,9 @@ import App from "./App";
 
 Vue.config.productionTip = false;
 
+import "./script/register";
 import plugin from "./script/plugin";
 Vue.use(plugin);
-
-import "./script/register";
 
 // import router from "./router";
 // import store from "./store";
