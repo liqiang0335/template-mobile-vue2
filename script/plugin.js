@@ -11,14 +11,5 @@ export default {
         cancelButtonText: "取消",
         type: "warning"
       });
-
-    //mixin
-    Vue.mixin({
-      methods: {
-        $setState(key, value) {
-          this.$store.commit("setState", { key, value });
-        }
-      }
-    });
   }
 };
