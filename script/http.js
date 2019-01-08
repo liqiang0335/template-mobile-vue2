@@ -2,13 +2,15 @@ const Qs = require("querystring");
 const axios = require("axios");
 
 const http = axios.create({
-  baseURL: "http://www...",
+  baseURL: "/",
   timeout: 30000,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
   },
   transformRequest: params => Qs.stringify(params)
 });
+
+export default http;
 
 //拦截请求
 http.interceptors.request.use(config => {
