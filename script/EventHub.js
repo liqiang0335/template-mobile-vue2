@@ -1,7 +1,7 @@
 /**
- * 订阅/发布系统
+ * 订阅/发布
  */
-export default class EventHub {
+class EventHub {
   constructor() {
     this.hub = Object.create(null);
   }
@@ -19,3 +19,5 @@ export default class EventHub {
     if (i > -1) this.hub[event].splice(i, 1);
   }
 }
+
+export default new EventHub();
