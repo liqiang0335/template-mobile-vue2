@@ -1,4 +1,5 @@
 # 项目结构
 
-- 组件根据页面结构放在 pages 文件夹
-- 通用无任何依赖的组件放在 component 文件
+- 视图层: component
+- 控制层: container
+- 逻辑层: store
