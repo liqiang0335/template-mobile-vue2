@@ -1,5 +1,5 @@
 import "./style/reset.css";
-import "./style/common.scss";
+import "./style/common.css";
 
 import Vue from "vue";
 import App from "./App";

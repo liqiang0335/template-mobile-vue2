@@ -1,8 +1,10 @@
 const Qs = require("querystring");
 const axios = require("axios");
+import ErrorCodes from "./ErrorCodes.json";
+import { BASE_URL } from "./const";
 
 const http = axios.create({
-  baseURL: "/",
+  baseURL: BASE_URL,
   timeout: 30000,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -30,7 +32,10 @@ http.interceptors.response.use(
   function(res) {
     const body = res.data;
     if (body.status != 1) {
-      console.log("HTTP: 处理服务器返回的错误码");
+      const errorMessage = ErrorCodes[body.status]
+        ? ErrorCodes[body.status]
+        : body.status;
+      console.log("HTTP: 处理服务器返回的错误码", errorMessage);
       return Promise.reject();
     }
     // 处理服务器返回的数据
