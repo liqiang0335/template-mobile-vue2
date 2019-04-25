@@ -18,7 +18,9 @@ export default http;
  * 拦截请求
  */
 http.interceptors.request.use(config => {
-  // 处理config
+  // 处理 config
+  // 例如在每个请求的header中添加token
+  // config.headers.token = window.token
   return config;
 });
 
