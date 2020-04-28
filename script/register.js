@@ -9,9 +9,6 @@ const getCompPathName = path => {
 
 compContext.keys().forEach(p => {
   const name = p.match(/([\w\-]+)\.vue$/)[1];
-  if (/^[A-Z]/.test(name)) {
-    return;
-  }
   const folder = getCompPathName(p).toLowerCase();
   const option = compContext(p).default;
   const final = "yn-" + folder + name;
