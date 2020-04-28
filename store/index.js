@@ -7,7 +7,7 @@ const store = new Vuex.Store({
   plugins: [],
   state: {},
   mutations: {},
-  actions: {}
+  actions: {},
 });
 
 export default store;

@@ -1,11 +1,6 @@
 import Vue from "vue";
 
-/**
- * 注册组件
- * 默认: 大小字母开头为路由, 小写字母开头为组件
- */
-
-const compContext = require.context("../router", true, /\.vue$/);
+const compContext = require.context("../comps", true, /\.vue$/);
 const getCompPathName = path => {
   const match = path.match(/\w+?(?=\/)/g);
   if (!match) return "";
