@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <yn-demo></yn-demo>
-    <h1>Hello</h1>
+    <div>demo</div>
   </div>
 </template>
 <script>
