@@ -1,34 +1,17 @@
 <template>
-  <div>
-    <input type="text" v-model="phone" placeholder="请输入手机号">
-    <button @click="submit">提交</button>
+  <div class="container">
+    <div>demo</div>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {
-      phone: ""
-    };
+    return {};
   },
   computed: {},
-  watch: {},
-  methods: {
-    async submit() {
-      //表单验证
-      await this.$fn.validate({
-        value: this.phone.trim(),
-        key: "phone"
-      });
-
-      //设置State
-      this.$setState("userId", 100);
-    }
-  },
-  mounted() {}
+  mounted() {},
+  methods: {}
 };
 </script>
-<style lang="scss" scoped>
-@import "~@/style/common.scss";
+<style scoped lang='scss'>
 </style>
-
