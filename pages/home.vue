@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div>demo</div>
+  <div class="home">
+    <div>home</div>
   </div>
 </template>
 <script>
@@ -10,7 +10,7 @@ export default {
   },
   computed: {},
   mounted() {},
-  methods: {}
+  methods: {},
 };
 </script>
 <style scoped lang='scss'>

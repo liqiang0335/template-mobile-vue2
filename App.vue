@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
-    <yn-demo></yn-demo>
-    <h1>Hello</h1>
+  <div class="App">
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -11,7 +10,7 @@ export default {
   },
   computed: {},
   mounted() {},
-  methods: {}
+  methods: {},
 };
 </script>
 <style scoped lang='scss'>

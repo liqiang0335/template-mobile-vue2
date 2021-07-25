@@ -1,5 +1,5 @@
-const Qs = require("querystring");
-const axios = require("axios");
+import Qs from "querystring";
+import axios from "axios";
 
 const http = axios.create({
   baseURL: "/",
@@ -12,15 +12,14 @@ const http = axios.create({
 
 export default http;
 
-// 拦截请求
 http.interceptors.request.use(config => {
   return config;
 });
 
-// 拦截响应
 http.interceptors.response.use(
   function (res) {
-    return res.data;
+    const body = res.data;
+    return body;
   },
   function (err) {
     if (err.response) {

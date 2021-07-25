@@ -1,7 +1,5 @@
 import Vue from "vue";
 
-Vue.config.productionTip = false;
-
 import {
   Tag,
   Swipe,
