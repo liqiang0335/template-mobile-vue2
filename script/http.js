@@ -1,4 +1,3 @@
-import Qs from "querystring";
 import axios from "axios";
 
 const http = axios.create({
@@ -7,7 +6,7 @@ const http = axios.create({
   headers: {
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
   },
-  transformRequest: params => Qs.stringify(params),
+  transformRequest: params => new URLSearchParams(params).toString(),
 });
 
 export default http;
