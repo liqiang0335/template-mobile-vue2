@@ -1,12 +1,10 @@
 import axios from "axios";
+const transformRequest = data => new URLSearchParams(data).toString();
 
 const http = axios.create({
   baseURL: "/",
   timeout: 30000,
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-  },
-  transformRequest: params => new URLSearchParams(params).toString(),
+  headers: {},
 });
 
 export default http;
